@@ -2,6 +2,7 @@ package day01
 
 import readInput
 import separateInputByEmptyLine
+import kotlin.streams.toList
 
 fun main() {
 
