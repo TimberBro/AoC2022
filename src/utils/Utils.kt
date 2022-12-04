@@ -32,6 +32,9 @@ fun separateInputByEmptyLine(input: List<String>): List<List<String>> {
     return entitiesList
 }
 
+fun Boolean.toInt() = if (this) 1 else 0
+
+
 fun separateInputByRows(input: List<String>, rowsInGroup: Int): List<List<String>> {
     val entitiesList = ArrayList<List<String>>()
     var entity = ArrayList<String>()
