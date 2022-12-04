@@ -19,9 +19,10 @@ fun main() {
             .map {
                 it.first.toSet().containsAll(it.second.toSet()) ||
                         it.second.toSet().containsAll(it.first.toSet())
-            }.map(Boolean::toInt)
-            .reduce { t, u -> t + u }
-        return result.orElseThrow()
+            }.filter {
+                it == true
+            }.count()
+        return result.toInt()
     }
 
 
@@ -33,9 +34,10 @@ fun main() {
             .map {
                 it.first.toSet().intersect(it.second.toSet()).isNotEmpty() ||
                         it.second.toSet().intersect(it.first.toSet()).isNotEmpty()
-            }.map(Boolean::toInt)
-            .reduce { t, u -> t + u }
-        return result.orElseThrow()
+            }.filter {
+                it == true
+            }.count()
+        return result.toInt()
     }
 
     val testInput = readInput("day04/Day04_test")
